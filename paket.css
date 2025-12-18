@@ -201,41 +201,76 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 1rem;
-            }
+       /* --- OPTIMASI MOBILE (HP) --- */
+@media (max-width: 768px) {
+    body {
+        /* Tambah padding atas supaya konten tidak tertutup menu yang menumpuk */
+        padding-top: 140px; 
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 
-            .nav-links {
-                display: flex; 
-                gap: 1rem;
-                margin-top: 1rem;
-                font-size: 0.9rem;
-                flex-wrap: wrap; 
-                justify-content: center;
-            }
+    /* 1. Navigasi: Pastikan Muncul dan Rapi */
+    nav {
+        flex-direction: column;
+        padding: 0.8rem;
+    }
 
-            body {
-                padding-top: 80px;
-            }
+    .nav-links {
+        display: flex !important; /* Memaksa menu muncul */
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        font-size: 0.85rem;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
 
-            .page-header h1 {
-                font-size: 2rem;
-            }
+    .logo {
+        font-size: 1.5rem;
+    }
 
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
+    /* 2. Header Halaman */
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
 
-            .back-button {
-                top: 70px;
-                left: 1rem;
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-            }
+    .page-header p {
+        font-size: 0.95rem;
+    }
 
-            .nav-links {
-                display: none;
-            }
+    /* 3. Judul Kategori (Internet Only, TV, dll) */
+    .category-title {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .category-title h2 {
+        font-size: 1.4rem;
+    }
+
+    /* 4. Grid Paket: Paksa 1 Kolom ke Bawah */
+    .packages-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    .package-card {
+        padding: 1.5rem;
+    }
+
+    .price-amount {
+        font-size: 1.8rem;
+    }
+
+    /* 5. Tombol Kembali (Jika ada) */
+    .back-button {
+        top: auto;
+        bottom: 20px; /* Pindahkan ke pojok bawah agar tidak menutupi menu atas */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
         }
