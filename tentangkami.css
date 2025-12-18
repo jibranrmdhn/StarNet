@@ -343,43 +343,96 @@
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column; 
-                padding: 1rem;
-            }
+       /* --- OPTIMASI KHUSUS HP (MOBILE) --- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 130px; /* Jarak agar tidak tertutup menu yang menumpuk */
+    }
 
-            .nav-links {
-                display: flex; 
-                gap: 1rem;
-                margin-top: 1rem;
-                font-size: 0.9rem;
-                flex-wrap: wrap; 
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
+    /* 1. Header & Navigasi: Memaksa menu muncul */
+    nav {
+        flex-direction: column;
+        padding: 0.8rem;
+    }
 
-            .section-title {
-                font-size: 2rem;
-            }
+    .nav-links {
+        display: flex !important; /* Memaksa menu muncul di HP */
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        font-size: 0.85rem;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
 
-            .stats-grid,
-            .values-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+    .logo {
+        font-size: 1.5rem;
+    }
 
-            .nav-links {
-                display: none;
-            }
+    /* 2. Hero Section */
+    .hero {
+        padding: 3rem 1rem;
+    }
 
-            .team-image-container {
-                height: 250px;
-            }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 
-            .video-section {
-                padding: 1.5rem;
-            }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Pengaturan Kontainer & Spasi */
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    /* 4. Grid Sistem: Paksa 1 Kolom ke bawah */
+    .stats-grid,
+    .values-grid,
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    /* 5. Perbaikan Video */
+    .video-section {
+        padding: 1rem;
+    }
+
+    /* 6. Perbaikan Timeline (Sangat penting agar teks tidak sempit) */
+    .timeline {
+        margin: 1.5rem 0;
+    }
+
+    .timeline-item {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-year {
+        font-size: 1.4rem;
+    }
+
+    /* 7. Perbaikan Kartu Tim */
+    .team-image-container {
+        height: 280px; /* Sesuaikan tinggi foto di HP */
+    }
+
+    /* 8. CTA Section */
+    .cta-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.6rem;
+    }
         }
