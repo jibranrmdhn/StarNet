@@ -272,24 +272,65 @@
             margin: 0.5rem 0;
         }
 
+       /* --- OPTIMASI MOBILE --- */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
+            /* 1. Header & Navigasi */
+            nav {
+                flex-direction: column; /* Logo di atas, menu di bawah */
+                padding: 1rem;
             }
 
             .nav-links {
-                display: none;
+                display: flex; /* Munculkan kembali menu */
+                gap: 1rem;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+                flex-wrap: wrap; /* Agar menu tidak tumpah ke samping */
+                justify-content: center;
+            }
+
+            /* 2. Hero Section */
+            .hero {
+                padding: 140px 1rem 60px; /* Tambah padding atas agar tidak tertutup header */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem; /* Perkecil ukuran font judul */
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* 3. Video & Kontainer */
+            .video-container {
+                width: 100%;
+                margin: 1rem 0;
+                border-radius: 8px; /* Sudut lebih tajam di HP agar space maksimal */
+            }
+
+            /* 4. Grid Kolom (Fitur & Paket) */
+            .features, .plan-cards, .testimonial-grid, .stats {
+                grid-template-columns: 1fr; /* Paksa jadi 1 kolom saja di HP */
+                gap: 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
             }
 
-            .video-container {
-                margin: 1.5rem auto;
+            /* 5. Kartu Paket */
+            .plan-card {
+                padding: 1.5rem;
+            }
+
+            /* 6. Statistik */
+            .stat-number {
+                font-size: 2rem;
             }
         }
