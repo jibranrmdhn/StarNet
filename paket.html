@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Internet - StarNet</title>
+    <link rel="stylesheet" href="paket.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background: #fff7ed;
+    color: #333;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff7a00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff7a00;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #c2410c;
+}
+
+.page-header p {
+    color: #7c2d12;
+}
+
+.category-section {
+    margin-bottom: 70px;
+}
+
+.category-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-title h2 {
+    font-size: 28px;
+    color: #ea580c;
+}
+
+.category-title p {
+    color: #9a3412;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.package-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.package-card.featured {
+    border: 3px solid #f97316;
+    background: linear-gradient(180deg, #fff7ed, #ffffff);
+    transform: scale(1.03);
+}
+
+.package-card.featured:hover {
+    transform: scale(1.06);
+}
+
+.package-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #9a3412;
+    margin-bottom: 8px;
+}
+
+.package-speed {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f97316;
+    margin-bottom: 15px;
+}
+
+.package-price {
+    margin-bottom: 20px;
+}
+
+.price-amount {
+    font-size: 28px;
+    font-weight: bold;
+    color: #431407;
+}
+
+.price-period {
+    color: #7c2d12;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.package-features li {
+    margin-bottom: 8px;
+    color: #7c2d12;
+    font-size: 14px;
+}
+
+.btn-subscribe {
+    margin-top: auto;
+    padding: 13px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+    background: linear-gradient(135deg, #fb923c, #f97316);
+    transform: scale(1.05);
+}
+
+footer {
+    background: #7c2d12;
+    color: #ffedd5;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .category-title h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .container {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .category-title h2 {
+        font-size: 22px;
+    }
+
+    .category-title p {
+        font-size: 14px;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .package-card {
+        padding: 22px 18px;
+    }
+
+    .package-card.featured {
+        transform: none;
+    }
+
+    .package-card.featured:hover {
+        transform: none;
+    }
+
+    .package-name {
+        font-size: 20px;
+    }
+
+    .package-speed {
+        font-size: 16px;
+    }
+
+    .price-amount {
+        font-size: 24px;
+    }
+
+    .package-features li {
+        font-size: 13px;
+    }
+
+    .btn-subscribe {
+        width: 100%;
+        font-size: 14px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .category-title h2 {
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 18px 12px;
+    }
+}
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">StarNet</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="ketersediaan.html">Ketersediaan</a></li>
+                <li><a href="paket.html">Paket</a></li>
+                <li><a href="tentangKami.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Paket Internet StarNet</h1>
+            <p>Pilih paket yang sesuai dengan kebutuhan Anda</p>
+        </div>
+
+        <!-- Internet Only -->
+        <div class="category-section">
+            <div class="category-title">
+                <h2 id="internet">🌐 Internet Only</h2>
+                <p>Paket internet murni dengan kecepatan tinggi</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-name">Basic</div>
+                    <div class="package-speed">50 Mbps</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 200K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Unlimited Kuota</li>
+                        <li>✓ Router WiFi Gratis</li>
+                        <li>✓ Instalasi Gratis</li>
+                        <li>✓ Support 24/7</li>
+                        <li>✓ Cocok 3-5 Device</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-name">Popular</div>
+                    <div class="package-speed">100 Mbps</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 350K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Unlimited Kuota</li>
+                        <li>✓ Router WiFi 6 Gratis</li>
+                        <li>✓ Instalasi Gratis</li>
+                        <li>✓ Support Prioritas</li>
+                        <li>✓ Bonus Netflix 1 Bulan</li>
+                        <li>✓ Cocok 5-10 Device</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-name">Premium</div>
+                    <div class="package-speed">300 Mbps</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 500K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Unlimited Kuota</li>
+                        <li>✓ Router Mesh Gratis</li>
+                        <li>✓ Instalasi Premium</li>
+                        <li>✓ Support VIP</li>
+                        <li>✓ Bonus Streaming Apps</li>
+                        <li>✓ Static IP Address</li>
+                        <li>✓ Cocok 10+ Device</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internet + TV -->
+        <div class="category-section">
+            <div class="category-title">
+                <h2 id="internetTV">📺 Internet + TV</h2>
+                <p>Paket combo internet dengan TV kabel berkualitas HD</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-name">Combo Basic</div>
+                    <div class="package-speed">50 Mbps + 80 Channel</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 350K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Internet 50 Mbps</li>
+                        <li>✓ 80+ TV Channel HD</li>
+                        <li>✓ STB Gratis</li>
+                        <li>✓ Router WiFi Gratis</li>
+                        <li>✓ Instalasi Gratis</li>
+                        <li>✓ Support 24/7</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-name">Combo Premium</div>
+                    <div class="package-speed">100 Mbps + 150 Channel</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 550K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Internet 100 Mbps</li>
+                        <li>✓ 150+ TV Channel HD/4K</li>
+                        <li>✓ STB Android Gratis</li>
+                        <li>✓ Router WiFi 6 Gratis</li>
+                        <li>✓ Netflix & Disney+ 1 Bulan</li>
+                        <li>✓ HBO & Sports Channel</li>
+                        <li>✓ Support Prioritas</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-name">Combo Ultimate</div>
+                    <div class="package-speed">300 Mbps + 200 Channel</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 750K</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Internet 300 Mbps</li>
+                        <li>✓ 200+ TV Channel 4K</li>
+                        <li>✓ 2 STB Android Gratis</li>
+                        <li>✓ Router Mesh Gratis</li>
+                        <li>✓ All Streaming Apps</li>
+                        <li>✓ Premium Sports & Movies</li>
+                        <li>✓ Support VIP 24/7</li>
+                        <li>✓ Static IP</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="location.href='pendaftaran.html'">Berlangganan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internet Kantor -->
+        <div class="category-section">
+            <div class="category-title">
+                <h2 id="Kantor">💼 Internet Kantor</h2>
+                <p>Solusi internet bisnis dengan kecepatan stabil dan SLA guarantee</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-name">Business Starter</div>
+                    <div class="package-speed">100 Mbps Dedicated</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 1.5JT</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ 100 Mbps Dedicated</li>
+                        <li>✓ SLA 99.5% Uptime</li>
+                        <li>✓ Static IP Address</li>
+                        <li>✓ Router Enterprise Gratis</li>
+                        <li>✓ Support 10-25 User</li>
+                        <li>✓ Technical Support</li>
+                        <li>✓ Free Maintenance</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="window.open('https://wa.me/+6289664168800','_blank')">Hubungi Sales</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-name">Business Pro</div>
+                    <div class="package-speed">300 Mbps Dedicated</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 3.5JT</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ 300 Mbps Dedicated</li>
+                        <li>✓ SLA 99.8% Uptime</li>
+                        <li>✓ 2 Static IP Address</li>
+                        <li>✓ Managed Router + Firewall</li>
+                        <li>✓ Support 25-50 User</li>
+                        <li>✓ Priority Support 24/7</li>
+                        <li>✓ Backup Connection</li>
+                        <li>✓ Cloud Storage 100GB</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="window.open('https://wa.me/+6289664168800','_blank')">Hubungi Sales</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-name">Enterprise</div>
+                    <div class="package-speed">1 Gbps Dedicated</div>
+                    <div class="package-price">
+                        <span class="price-amount">Rp 8JT</span>
+                        <span class="price-period">/bulan</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ 1 Gbps Dedicated</li>
+                        <li>✓ SLA 99.9% Uptime</li>
+                        <li>✓ 5 Static IP Address</li>
+                        <li>✓ Full Managed Network</li>
+                        <li>✓ Support 50+ User</li>
+                        <li>✓ Dedicated Support Team</li>
+                        <li>✓ Redundant Connection</li>
+                        <li>✓ Cloud Storage 500GB</li>
+                        <li>✓ VPN & Security Suite</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="window.open('https://wa.me/+6289664168800','_blank')">Hubungi Sales</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <p>&copy; 2024 StarNet. All rights reserved.</p>
+        <p>📞 Call Center: 1500-XXX | 📧 cs@starnet.id</p>
+    </footer>
+    
+</body>
+</html>

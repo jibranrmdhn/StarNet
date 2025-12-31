@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarNet - Provider WiFi Terpercaya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ff7a00;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #ff7a00;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #ff7a00, #ff9f40);
+        color: white;
+        text-align: center;
+        padding: 5rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+
+    .video-container video {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-button {
+        background: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+
+    .cta-button a {
+        text-decoration: none;
+        color: #ff7a00;
+        font-weight: bold;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-solution {
+        background: #ffffff;
+        padding: 4rem 2rem;
+    }
+
+    .solution-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .solution-text h2 {
+        font-size: 2.2rem;
+        color: #222;
+        margin-bottom: 1.5rem;
+    }
+
+    .solution-text p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 1rem;
+        line-height: 1.8;
+    }
+
+    .solution-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .container,
+    .plus-container,
+    .plans {
+        max-width: 1200px;
+        margin: auto;
+        padding: 4rem 2rem;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+        color: #222;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+        color: #ff7a00;
+        margin-bottom: 1rem;
+    }
+
+    .plus {
+        background: #fff4ec;
+    }
+
+    .plus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .plus-item {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .plus-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .plus-link {
+        display: inline-block;
+        margin-top: 1rem;
+        text-decoration: none;
+        color: #ff7a00;
+        font-weight: bold;
+    }
+
+    .plan-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .plan-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .plan-card:hover {
+        transform: scale(1.03);
+    }
+
+    .price {
+        font-size: 2.5rem;
+        color: #ff7a00;
+        margin: 1rem 0;
+    }
+
+    .plan-features {
+        list-style: none;
+        margin: 1.5rem 0;
+    }
+
+    .plan-features li {
+        margin-bottom: 0.5rem;
+    }
+
+    .testimonials {
+        width: 100%;
+        background: #fff4ec;
+    }
+
+    .testimonial-wrapper {
+        max-width: 1200px;
+        margin: auto;
+        padding: 4rem 2rem;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .testimonial-author {
+        margin-top: 1rem;
+        font-weight: bold;
+        color: #ff7a00;
+    }
+
+    .coverage {
+        width: 100%;
+        background: linear-gradient(135deg, #ff7a00, #ff9f40);
+        color: white;
+        text-align: center;
+        padding: 5rem 2rem;
+    }
+
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .video-container {
+            max-width: 100%;
+        }
+
+        .cta-button {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .solution-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .solution-text h2 {
+            font-size: 1.8rem;
+        }
+
+        .features {
+            gap: 1.5rem;
+        }
+
+        .plus-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .plan-cards {
+            grid-template-columns: 1fr;
+        }
+
+        .price {
+            font-size: 2rem;
+        }
+
+        .testimonial-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .coverage h2 {
+            font-size: 1.8rem;
+        }
+
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .hero {
+            padding: 3.5rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+        }
+
+        footer {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">StarNet</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="ketersediaan.html">Ketersediaan</a></li>
+                <li><a href="paket.html">Paket</a></li>
+                <li><a href="tentangKami.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Internet Super Cepat untuk Rumah Anda</h1>
+        <p>Nikmati koneksi WiFi fiber optik hingga 1 Gbps dengan harga terjangkau</p>
+
+        <div class="video-container">
+            <video controls autoplay muted loop>
+                <source src="Tes Kecepatan indihome 1gbps.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+
+        <button class="cta-button"><a href="pendaftaran.html">Daftar Sekarang</a></button>
+    </section>
+
+    <section class="about-solution">
+        <div class="solution-container">
+            <div class="solution-text">
+                <h2>StarNet Adalah Solusi Internet Stabil Untuk Setiap Orang</h2>
+                <p>
+                    StarNet hadir untuk memenuhi kebutuhan internet rumah, bisnis, hingga hiburan digital Anda.
+                    Dengan teknologi fiber optik murni, kami memastikan koneksi cepat, stabil, dan tanpa gangguan
+                    kapan pun Anda membutuhkannya.
+                </p>
+                <p>
+                    Mulai dari streaming, gaming, hingga bekerja dari rumah — semuanya berjalan lancar bersama StarNet.
+                </p>
+            </div>
+
+            <div class="solution-image">
+                <img src="foto beranda.jpeg" alt="Solusi Internet Stabil">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container" id="features">
+        <h2 class="section-title">Mengapa Memilih StarNet?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3 align="center">Kecepatan Tinggi</h3>
+                <p align="center">Teknologi fiber optik terbaru dengan kecepatan hingga 1 Gbps untuk streaming dan
+                    gaming tanpa buffering</p>
+            </div>
+            <div class="feature-card">
+                <h3 align="center">Harga Terjangkau</h3>
+                <p align="center">Paket internet dengan harga kompetitif mulai dari 200 ribu per bulan dengan berbagai
+                    pilihan</p>
+            </div>
+            <div class="feature-card">
+                <h3 align="center">Instalasi Gratis</h3>
+                <p align="center">Proses instalasi cepat dan gratis oleh teknisi berpengalaman, siap dalam 24 jam</p>
+            </div>
+            <div class="feature-card">
+                <h3 align="center">Support 24/7</h3>
+                <p align="center">Layanan pelanggan siap membantu Anda kapan saja via telepon, chat, atau aplikasi</p>
+            </div>
+            <div class="feature-card">
+                <h3 align="center">Tanpa FUP</h3>
+                <p align="center">Internet unlimited tanpa pembatasan kuota, browsing sepuasnya tanpa khawatir</p>
+            </div>
+            <div class="feature-card">
+                <h3 align="center">Bonus Menarik</h3>
+                <p align="center">Router WiFi 6 gratis, bonus streaming service, dan program loyalitas pelanggan</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="plus" id="plus">
+        <div class="plus-container">
+            <h2 class="section-title">Kelebihan StarNet</h2>
+            <div class="plus-grid">
+                <div class="plus-item">
+                    <div class="plus-icon">📊</div>
+                    <h3>Internet Cepat hingga 1 Gbps</h3>
+                    <p>StarNet menyediakan berbagai pilihan kecepatan internet fiber optik murni, mulai dari 50 Mbps
+                        hingga 1 Gbps.</p>
+                    <a href="keunggulan.html" class="plus-link">Pelajari Lebih Lanjut</a>
+                </div>
+
+                <div class="plus-item">
+                    <div class="plus-icon">🎬</div>
+                    <h3>Layanan TV dengan Ratusan Channel</h3>
+                    <p>Semakin seru dengan layanan Internet + TV StarNet untuk menonton ratusan saluran TV lokal dan
+                        internasional.</p>
+                    <a href="layanantv.html" class="plus-link">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans" id="plans">
+        <h2 class="section-title">Pilih Paket Sesuai Kebutuhan</h2>
+        <div class="plan-cards">
+            <div class="plan-card">
+                <h3>Internet Only</h3>
+                <div class="start">Start From</div>
+                <div class="price">Rp 200K<span style="font-size: 1rem;">/bulan</span></div>
+                <ul class="plan-features">
+                    <li>✓ Kecepatan 50 Mbps</li>
+                    <li>✓ Unlimited Kuota</li>
+                    <li>✓ Router WiFi Gratis</li>
+                    <li>✓ Instalasi Gratis</li>
+                    <li>✓ Support 24/7</li>
+                </ul>
+                <button class="cta-button"><a href="paket.html#internet">Pilih Paket</a></button>
+            </div>
+            <div class="plan-card">
+                <h3>Internet + TV</h3>
+                <div class="start">Start From</div>
+                <div class="price">Rp 350K<span style="font-size: 1rem;">/bulan</span></div>
+                <ul class="plan-features">
+                    <li>✓ Kecepatan 100 Mbps</li>
+                    <li>✓ Unlimited Kuota</li>
+                    <li>✓ Router WiFi 6 Gratis</li>
+                    <li>✓ Instalasi Gratis</li>
+                    <li>✓ Support Prioritas</li>
+                    <li>✓ Bonus Netflix 1 Bulan</li>
+                </ul>
+                <button class="cta-button"><a href="paket.html#internetTV">Pilih Paket</a></button>
+            </div>
+            <div class="plan-card">
+                <h3>Internet Kantor</h3>
+                <div class="start">Start From</div>
+                <div class="price">Rp 1.5Jt<span style="font-size: 1rem;">/bulan</span></div>
+                <ul class="plan-features">
+                    <li>✓ Kecepatan 300 Mbps</li>
+                    <li>✓ Unlimited Kuota</li>
+                    <li>✓ Router Mesh Gratis</li>
+                    <li>✓ Instalasi Premium</li>
+                    <li>✓ Support VIP</li>
+                    <li>✓ Bonus Streaming Apps</li>
+                    <li>✓ Static IP Address</li>
+                </ul>
+                <button class="cta-button"><a href="paket.html#Kantor">Pilih Paket</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonial-wrapper">
+            <h2 class="section-title">Kata Mereka tentang StarNet</h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Internet super cepat dan stabil! Saya bisa WFH dan anak-anak sekolah online tanpa masalah."
+                    </p>
+                    <p class="testimonial-author">- Ibu Sari</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Harga terjangkau dengan kualitas luar biasa. Gaming dan streaming lancar."
+                    </p>
+                    <p class="testimonial-author">- Budi</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Instalasi cepat, teknisi profesional, dan stabil 24/7."
+                    </p>
+                    <p class="testimonial-author">- Pak Andi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="coverage" id="coverage">
+        <h2 class="section-title">Jangkauan Luas di Seluruh Indonesia</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">StarNet telah melayani jutaan pelanggan di berbagai kota</p>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div>Kota Terjangkau</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2M+</div>
+                <div>Pengguna Aktif</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div>Uptime Guarantee</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.8★</div>
+                <div>Rating Pelanggan</div>
+            </div>
+        </div>
+        <button class="cta-button"><a href="ketersediaan.html">Cek Ketersediaan</a></button>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 StarNet. All rights reserved.</p>
+        <p>📞 Call Center: 1500-XXX | 📧 cs@starnet.id</p>
+    </footer>
+</body>
+
+</html>

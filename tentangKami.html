@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - StarNet</title>
+    <link rel="stylesheet" href="tentangkami.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background: #fff7ed;
+    color: #1f2933;
+    line-height: 1.7;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff7a00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff7a00;
+}
+
+.hero {
+    background: linear-gradient(
+        rgba(234, 88, 12, 0.85),
+        rgba(234, 88, 12, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover;
+    color: #fff;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 850px;
+    margin: auto;
+    font-size: 17px;
+    color: #ffedd5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ea580c;
+}
+
+.section-text {
+    text-align: center;
+    max-width: 700px;
+    margin: auto auto 30px;
+    color: #6b7280;
+}
+
+.video-section {
+    display: flex;
+    justify-content: center;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-top: 4px solid #f97316;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+}
+
+.value-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.value-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #9a3412;
+    margin-bottom: 8px;
+}
+
+.value-text {
+    color: #6b7280;
+    font-size: 14.5px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff;
+    padding: 35px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(234,88,12,0.35);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.stat-label {
+    opacity: 0.9;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+    padding-left: 25px;
+    border-left: 3px solid #f97316;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.timeline-year {
+    font-weight: bold;
+    color: #ea580c;
+    margin-bottom: 5px;
+}
+
+.timeline-text {
+    color: #6b7280;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-image-container img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-name a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ea580c;
+    text-decoration: none;
+}
+
+.team-position {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 5px 0 10px;
+}
+
+.team-bio {
+    font-size: 14px;
+    color: #374151;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 35px;
+    background: #fff;
+    color: #ea580c;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background: #ffedd5;
+}
+
+footer {
+    background: #7c2d12;
+    color: #ffedd5;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 14px;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .video-container {
+        border-radius: 14px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        padding: 22px;
+    }
+
+    .value-title {
+        font-size: 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-number {
+        font-size: 26px;
+    }
+
+    .timeline {
+        padding-left: 18px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-image-container img {
+        height: 230px;
+    }
+
+    .team-name a {
+        font-size: 17px;
+    }
+
+    .cta-section {
+        padding: 45px 20px;
+        border-radius: 16px;
+    }
+
+    .btn-cta {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 18px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 28px 15px;
+    }
+}
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">StarNet</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="ketersediaan.html">Ketersediaan</a></li>
+                <li><a href="paket.html">Paket</a></li>
+                <li><a href="tentangKami.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Tentang StarNet</h1>
+        <p>StarNet adalah provider Wi-FI yang menyediakan berbagai layanan internet fiber optik sejak Tahun 2015. Kami berkomitmen untuk menjadi provider nomor satu se-Indonesia dengan mengedepankan kebutuhan pelanggan.</p>
+    </div>
+
+    <div class="container">
+        <!-- Video Section -->
+        <div class="section">
+            <p class="section-text">
+                Tonton video ini untuk mengetahui hal yang berkaitan dengan Wi-Fi
+            </p>
+            <div class="video-section">
+                <div class="video-container">
+                    <!-- Ganti URL dengan video YouTube Anda -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/pp4SSw_0uXA" 
+                        title="StarNet Company Profile" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visi Misi -->
+        <div class="section">
+            <h2 class="section-title">Visi & Misi Kami</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-title">Visi</div>
+                    <div class="value-text">
+                        Menjadi penyedia layanan internet terdepan di Indonesia yang menghubungkan setiap rumah dan bisnis dengan koneksi super cepat dan terpercaya.
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-title">Misi</div>
+                    <div class="value-text">
+                        Memberikan layanan internet berkualitas tinggi dengan harga terjangkau, didukung teknologi fiber optik terkini dan customer service terbaik.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistik -->
+        <div class="section">
+            <h2 class="section-title">StarNet dalam Angka</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Pelanggan Aktif</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">512</div>
+                    <div class="stat-label">Kota Terlayani</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">Rating Pelanggan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nilai Kami -->
+        <div class="section">
+            <h2 class="section-title">Nilai-Nilai Kami</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💪</div>
+                    <div class="value-title">Kualitas</div>
+                    <div class="value-text">
+                        Kami berkomitmen memberikan layanan internet dengan kualitas terbaik menggunakan teknologi fiber optik terkini.
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Kepercayaan</div>
+                    <div class="value-text">
+                        Membangun kepercayaan pelanggan melalui transparansi, integritas, dan layanan yang konsisten.
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <div class="value-title">Inovasi</div>
+                    <div class="value-text">
+                        Terus berinovasi menghadirkan teknologi dan layanan terbaru untuk kepuasan pelanggan.
+                    </div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <div class="value-title">Kepedulian</div>
+                    <div class="value-text">
+                        Peduli terhadap kebutuhan pelanggan dengan customer service 24/7 yang responsif.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="section">
+            <h2 class="section-title">Perjalanan Kami</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-text">
+                        StarNet didirikan dengan visi memberikan akses internet berkualitas untuk semua. Dimulai dengan melayani 3 kota besar di Indonesia.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-text">
+                        Ekspansi ke 50 kota dan mencapai 100.000 pelanggan. Meluncurkan layanan fiber optik 100 Mbps pertama di Indonesia.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-text">
+                        Meraih penghargaan "Best Internet Provider" dan mencapai 500.000 pelanggan. Meluncurkan paket internet + TV.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-text">
+                        Mencapai 1 juta pelanggan dan ekspansi ke 300 kota. Meluncurkan layanan dedicated internet untuk bisnis.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-text">
+                        2 juta+ pelanggan aktif di 512 kota. Meluncurkan paket internet hingga 1 Gbps dan terus berinovasi.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tim -->
+        <div class="section">
+            <h2 class="section-title">Tim Kami</h2>
+            <p class="section-text">
+                Didukung oleh tim profesional yang berpengalaman dan berdedikasi memberikan layanan terbaik
+            </p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image-container">
+                        <img src="WhatsApp Image 2025-12-18 at 3.33.21 PM.jpeg" alt="Jibran">
+                    </div>
+                    <div class="team-info">
+                        <div class="team-name"><a href="cv1.html">Muhammad Jibran Ramadhan</a></div>
+                        <div class="team-position">CEO & Founder</div>
+                        <div class="team-bio">
+                            15+ tahun pengalaman di industri telekomunikasi dan teknologi informasi.
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-container">
+                        <img src="WhatsApp Image 2025-12-12 at 7.10.14 PM.jpeg" alt="Arya">
+                    </div>
+                    <div class="team-info">
+                        <div class="team-name"><a href="cv3.html">Arya Wiguna</a></div>
+                        <div class="team-position">CTO</div>
+                        <div class="team-bio">
+                            Ahli teknologi fiber optik dengan 12 tahun pengalaman membangun infrastruktur jaringan.
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-container">
+                        <img src="WhatsApp Image 2025-12-12 at 6.52.55 PM.jpeg" alt="Jibran">
+                    </div>
+                    <div class="team-info">
+                        <div class="team-name"><a href="cv2.html">Nurfaizal</a></div>
+                        <div class="team-position">Head of Operations</div>
+                        <div class="team-bio">
+                            Mengelola operasional di 500+ kota dengan tim lebih dari 2000 teknisi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Bergabunglah dengan Jutaan Pelanggan Kami</h2>
+            <p>Nikmati internet super cepat dan terpercaya dari StarNet</p>
+            <a href="pendaftaran.html" class="btn-cta">Daftar Sekarang</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 StarNet. All rights reserved.</p>
+        <p>📞 Call Center: 1500-XXX | 📧 cs@starnet.id</p>
+    </footer>
+</body>
+</html>

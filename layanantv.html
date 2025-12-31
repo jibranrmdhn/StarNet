@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan TV StarNet - Internet + TV</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff7a00;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ff7a00;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ff7a00, #ff9f40);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #ff7a00;
+        }
+
+        .tv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 3rem;
+        }
+
+        .tv-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s;
+            border-top: 6px solid #ff7a00;
+        }
+
+        .tv-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .tv-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tv-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff7a00;
+            margin-bottom: 0.8rem;
+        }
+
+        .tv-text {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .channels {
+            background: #fff4ec;
+            padding: 4rem 2rem;
+        }
+
+        .channel-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .channel-item {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .channels img {
+            display: block;
+            max-width: 1000px;
+            width: 100%;
+            margin: 3rem auto 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border: 4px solid #ff7a00;
+            background: white;
+            padding: 0.5rem;
+        }
+
+        .channels img:hover {
+            transform: scale(1.02);
+            transition: 0.3s ease;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #ff7a00, #ff9f40);
+            color: white;
+            text-align: center;
+            padding: 4.5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta a {
+            background: white;
+            color: #ff7a00;
+            padding: 0.9rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .tv-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tv-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .tv-icon {
+        font-size: 2.5rem;
+    }
+
+    .channels {
+        padding: 3rem 1.5rem;
+    }
+
+    .channel-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .channel-item {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .channels img {
+        margin-top: 2rem;
+        border-radius: 15px;
+    }
+
+    .cta {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .cta h2 {
+        font-size: 1.9rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+
+    .cta a {
+        display: inline-block;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .channel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 1.5rem 1rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">StarNet</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="ketersediaan.html">Ketersediaan</a></li>
+            <li><a href="paket.html">Paket</a></li>
+            <li><a href="tentangKami.html">Tentang Kami</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Layanan TV StarNet</h1>
+    <p>Nikmati hiburan tanpa batas dengan ratusan channel TV digital berkualitas HD yang ter-include dalam paket Internet + TV</p>
+</section>
+
+<section class="container">
+    <h2 class="section-title">Keunggulan Layanan TV StarNet</h2>
+
+    <div class="tv-grid">
+        <div class="tv-card">
+            <div class="tv-icon">📺</div>
+            <div class="tv-title">300+ Channel</div>
+            <p class="tv-text">Ratusan channel lokal dan internasional dari berbagai kategori hiburan, berita, olahraga, dan anak.</p>
+        </div>
+
+        <div class="tv-card">
+            <div class="tv-icon">🎬</div>
+            <div class="tv-title">Kualitas HD & 4K</div>
+            <p class="tv-text">Tayangan jernih dengan kualitas HD hingga 4K untuk pengalaman menonton terbaik.</p>
+        </div>
+
+        <div class="tv-card">
+            <div class="tv-icon">⚡</div>
+            <div class="tv-title">Tanpa Buffering</div>
+            <p class="tv-text">Didukung koneksi fiber optik StarNet, streaming TV lebih stabil tanpa lag.</p>
+        </div>
+
+        <div class="tv-card">
+            <div class="tv-icon">👨‍👩‍👧‍👦</div>
+            <div class="tv-title">Channel Keluarga</div>
+            <p class="tv-text">Tersedia channel edukasi anak, kartun, hingga tayangan keluarga yang aman.</p>
+        </div>
+
+        <div class="tv-card">
+            <div class="tv-icon">🎮</div>
+            <div class="tv-title">Sports & Entertainment</div>
+            <p class="tv-text">Nikmati siaran olahraga, film blockbuster, dan serial favorit setiap hari.</p>
+        </div>
+
+        <div class="tv-card">
+            <div class="tv-icon">💰</div>
+            <div class="tv-title">Lebih Hemat</div>
+            <p class="tv-text">Lebih murah dibanding langganan TV dan internet secara terpisah.</p>
+        </div>
+    </div>
+</section>
+
+<section class="channels">
+    <h2 class="section-title">Kategori Channel Unggulan</h2>
+    <div class="channel-grid">
+        <div class="channel-item">Movies TV</div>
+        <div class="channel-item">Knowledge TV</div>
+        <div class="channel-item">Entertaiment TV</div>
+        <div class="channel-item">Kids TV</div>
+        <div class="channel-item">News TV</div>
+        <div class="channel-item">Local TV</div>
+        <div class="channel-item">International TV</div>
+        <div class="channel-item">Dan Lain-lain</div>
+    </div>
+    <img src="channeltv.png" alt="List Channel TV">
+</section>
+
+<section class="cta">
+    <h2>Gabung Paket Internet + TV Sekarang</h2>
+    <p>Internet super cepat + hiburan lengkap dalam satu paket hemat</p>
+    <a href="pendaftaran.html">Daftar Sekarang</a>
+</section>
+
+<footer>
+    <p>&copy; 2024 StarNet. All rights reserved.</p>
+    <p>📞 Call Center: 1500-XXX | 📧 cs@starnet.id</p>
+</footer>
+
+</body>
+</html>

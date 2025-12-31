@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mahasiswa Teknik Informatika</title>
+    <link rel="stylesheet" href="cv.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    background: #ff7a00;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    background: #e96f00;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 80px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #ff7a00, #ff9f40);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 2rem 4rem;
+    position: relative;
+}
+
+.photo-container {
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-bottom: 1rem;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.contact-info {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.content {
+    padding: 3rem 3rem 4rem;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    color: #ff7a00;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid #ff7a00;
+    width: fit-content;
+}
+
+.profile-text {
+    font-size: 1rem;
+    color: #444;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.item-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.item-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.item-subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 0.5rem;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+ul {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+ul li {
+    margin-bottom: 0.4rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-left: 5px solid #ff7a00;
+}
+
+.skill-category h4 {
+    margin-bottom: 0.6rem;
+    color: #222;
+}
+
+.skill-category ul {
+    margin-left: 1rem;
+}
+
+.project-item ul li {
+    list-style: disc;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 2rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+</style>
+<body>
+    <a href="tentangKami.html" class="back-button">
+        <span>←</span>
+        <span>Kembali</span>
+    </a>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="photo-container">
+                <img src="WhatsApp Image 2025-12-12 at 6.52.55 PM.jpeg" alt="Foto Profil" class="profile-photo">
+            </div>
+            <h1>Nurfaizal</h1>
+            <p>Mahasiswa Teknik Informatika</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>Nurfaizal@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+62 896-6416-8801</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Tangerang, Indonesia</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Profil -->
+            <div class="section">
+                <h2 class="section-title">Profil</h2>
+                <p class="profile-text">
+                   Mahasiswa Teknik Informatika Universitas Pamulang semester 5 dengan IPK 3.54 yang berdedikasi. Memiliki landasan teori yang kuat serta kemampuan praktis dalam pengembangan aplikasi web dan mobile. Aktif berorganisasi dan berpengalaman dalam kolaborasi tim, saya mencari peluang magang atau paruh waktu untuk mengaplikasikan keahlian teknis saya dalam proyek nyata di industri teknologi informasi.
+                </p>
+            </div>
+
+            <!-- Pendidikan -->
+            <div class="section">
+                <h2 class="section-title">Pendidikan</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">Universitas Pamulang</div>
+                        <div class="item-date">2021 - Sekarang</div>
+                    </div>
+                    <div class="item-subtitle">S1 Teknik Informatika</div>
+                    <div class="item-description">IPK: 3.54/4.00</div>
+                    <ul>
+                        <li>Mata kuliah relevan: Pemrograman Web, Basis Data, Struktur Data, Algoritma</li>
+                    </ul>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">SMA Negeri 1 Jakarta</div>
+                        <div class="item-date">2020 - 2022</div>
+                    </div>
+                    <div class="item-subtitle">IPA</div>
+                </div>
+            </div>
+
+            <!-- Proyek -->
+            <div class="section">
+                <h2 class="section-title">Proyek</h2>
+                <div class="project-item">
+                    <div class="item-header">
+                        <div class="item-title">Website E-Commerce</div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <ul>
+                        <li>Mengembangkan website e-commerce menggunakan HTML, CSS, JavaScript, dan PHP</li>
+                        <li>Implementasi fitur keranjang belanja, payment gateway, dan sistem admin</li>
+                        <li>Database menggunakan MySQL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Keahlian -->
+            <div class="section">
+                <h2 class="section-title">Keahlian</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Bahasa Pemrograman</h4>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Web Development</h4>
+                        <ul>
+                            <li>HTML & CSS</li>
+                            <li>React.js</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Database</h4>
+                        <ul>
+                            <li>Firebase</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Tools & Lainnya</h4>
+                        <ul>
+                            <li>GitHub</li>
+                            <li>VS Code</li>
+                            <li>MS Office</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sertifikasi -->
+            <div class="section">
+                <h2 class="section-title">Sertifikasi</h2>
+                <ul>
+                     <li>Web Development Bootcamp - MySkill, 2024</li>
+                </ul>
+            </div>
+
+            <!-- Bahasa -->
+            <div class="section">
+                <h2 class="section-title">Bahasa</h2>
+                <ul>
+                    <li>Bahasa Indonesia - Native</li>
+                    <li>Bahasa Inggris - Basic</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
